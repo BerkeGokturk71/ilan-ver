@@ -24,31 +24,34 @@ a{
 li{
     list-style: none;
 }
+
+/* Navbar */
+
 .navbar{
-     /*flex kutu yapısını oluşturmamızı sağlar*/ 
+     /*flex kutu yapısını oluşturmamızı sağlar*/
     display: flex;
-    /*başlardan sondan belirli bir mesafe verir bize */ 
+    /*başlardan sondan belirli bir mesafe verir bize */
     justify-content: space-around;
-     /*eğer ekranı büyütüp küçültürsek bile bize responsive bir şekilde elementleri hızalar kayma görünmeme gibi sorunları çözer */ 
+     /*eğer ekranı büyütüp küçültürsek bile bize responsive bir şekilde elementleri hızalar kayma görünmeme gibi sorunları çözer */
     flex-wrap: wrap;
-     /*kutularımızı ekranın ortalanmasında kullanılır */ 
+     /*kutularımızı ekranın ortalanmasında kullanılır */
     align-items: center;
-     /*elemanlarımızın dizilişini ayarlar row da satır dizilimi column da ise dikey şekilde hizalar */ 
+     /*elemanlarımızın dizilişini ayarlar row da satır dizilimi column da ise dikey şekilde hizalar */
     flex-direction: row;
     width: 100%;
-    height: 10%;
+    height: 60px;
     background-color: rgb(93, 157, 157);
     opacity: 0.8;
 }
+
 .nav-links li{
     text-decoration: none;
     display: flex;
     flex-direction: row;
-    
 }
 
 .logo a img{
-    width: 140px;
+    width: 100%;
     height: 60px;
 }
 
@@ -57,9 +60,34 @@ li{
     font-size: 1.2rem;
     color:black;
 }
+
 .nav-links li a:hover{
     color: #4f8edc;
     font-size: large;
+}
+
+/* Form Modal */
+
+form{
+    margin-bottom: 30px;
+}
+
+.open-window-div{
+    margin-top: 10px;
+}
+
+.vehicle-info{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 4px;
+    margin-bottom: 8px;
+}
+
+.vehicle-info input{
+    border: none !important;
+    box-shadow: none !important;
+    border-bottom: 4px;
 }
 
 #open-window{
@@ -77,11 +105,6 @@ li{
     position: fixed;
     width: 420px;
     border-spacing: 10px;
-
-    
-}
-form{
-    margin-bottom: 30px;
 }
 
 #open-window input, #open-window textarea, #open-window select {
@@ -89,38 +112,42 @@ form{
     width: 100%;
     padding: 8px;
     border: 1px solid #ddd; ;
-    
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) ;
 }
-.open-window-div{
-    margin-top: 10px;
-}
-.vehicle-info{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin-top: 4px;
-    margin-bottom: 8px;
-}
-.vehicle-info input{
-    border: none !important;
-    box-shadow: none !important;
-    border-bottom: 4px;
-}
+
+
+/*Containers*/
 
 .container-table{
-    width: 80%;
+    width: 100%;
     margin: 10px;
-   
     box-shadow:0 4px 8px rgba(0, 0, 0, 0.2) ;
     float: right;
 }
-tr:nth-child(even){
-    background-color: #039;
 
+#search-result-form{
+    margin-top: 20px;
+    margin-left: 4px;
+    padding: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    display: flex;
+    flex-direction: row;
 }
+
+#search-result-filter{
+    margin: 10px ;
+    background: #fff;
+    width: 178px;
+    /* padding: 10px; */
+    margin-top: 10px;
+}
+
+/*Search Result Table*/
+
 #search-result{
+    width: 100%;
     background: #e6fbd3;
 }
 
@@ -137,23 +164,31 @@ tr:nth-child(even){
     padding: 0 4px;
 }
 
-tbody tr:nth-child(even){
+#search-result tbody tr td:nth-child(1){
+    background-color: #fff !important;
+}
+
+#search-result tbody tr:nth-child(even){
    line-height: 13px;
    background-color: #fff;
-
 }
-tbody tr:nth-child(odd){
+
+#search-result tbody tr:nth-child(odd){
     line-height: 13px;
     background-color: rgba(139, 139, 139, 0.6);
 }
-#search-result tbody td img{
-    width: 120px;
-    height: 93px;
-    background: #fff;
+
+#search-result tbody td img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    display: block;
 }
+
 #search-result-product-description{
     text-align: left !important;
 }
+
 #search-result-product-categories{
     font-weight: bold;
     font-size: 12px;
@@ -164,42 +199,16 @@ tbody tr:nth-child(odd){
     padding: 3px 3px 0 3px;
 }
 
+/* Search Result Filter*/
 
-#search-result-form{
-    margin-top: 20px;
-    margin-left: 4px;
-    padding: 10px;
-    font-size: 12px;
-    font-weight: bold;
-    display: flex;
-    flex-direction: row;
-    
-}
-#search-result-filter{
-    margin: 10px 30px;
-    background: #fff;
-    width: 178px;
-    padding: 10px;
-    margin-top: 10px;
-   
-}
-
-#search-result-filter label{
-    font-size: 14px;
-    font-weight: bold;
-}
-#search-result-filter li {
-    list-style: none;
-}
 .search-result-filter-container{
     display: flex;
     flex-direction: column;
     padding: 10px ;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
     margin-bottom: 20px;
-    
-    
 }
+
 .filter-content-elements{
     display: flex;
     justify-content: space-between;
@@ -209,6 +218,16 @@ tbody tr:nth-child(odd){
     text-align: left;
     margin-bottom: 10px;
 }
+
+#search-result-filter label{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+#search-result-filter li {
+    list-style: none;
+}
+
 #dropdown-for-town{
     margin-top: 5px;
 }
@@ -219,15 +238,24 @@ tbody tr:nth-child(odd){
     padding: 6px;
     border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 2px;
-    
 }
 
+/* Footer */
 
 footer{
     background: rgba(139, 139, 139, 0.2);
     height: auto;
     position: relative;
 
+}
+
+.footer-main-titles{
+    font-size: 20px;
+    border-bottom: 2px solid;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    text-align: center;
+    letter-spacing: 0.1em;
 }
 
 #footer-area-container  {
@@ -239,28 +267,19 @@ footer{
     border-bottom: rgba(139, 139, 139, 0.6);
 }
 
-
-.footer-main-titles{
-    font-size: 20px;
-    border-bottom: 2px solid;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    text-align: center;
-    letter-spacing: 0.1em;
-}
-
 #footer-area-container li{
     line-height: 25px;
-   
 }
+
 #footer-area-container li a {
     color: #555;
-} 
+}
 
 #footer-area-container li:hover{
     text-decoration: underline;
 }
-#copyright{  
+
+#copyright{
     width: 100%;
     margin-bottom: 3px;
     background-color: #fff;
@@ -268,13 +287,13 @@ footer{
     bottom: 0;
     left: 0    ;
 }
+
 #copyright p {
     padding: 10px;
     text-align: center;
     font-size: larger;
     letter-spacing: 0.1em;
 }
-
 
   /* Geçiş animasyonu için */
   @keyframes gradient-animation {
